@@ -153,7 +153,7 @@ export const LandingPageComponent: React.FC = () => {
           <button className="flex items-center justify-center" onClick={ShowSignUp}> <MdOutlineCreate /> &nbsp;Sign Up</button>
         </div>
       </header>
-      <section className="grid md:block grid-cols-2 py-20 px-20">
+      <section className="grid md:block grid-cols-2 py-20 px-20 lg:px-5">
         <div>
         <h1 className="text-[3.5rem] md:text-center md:mb-20 font-black lg:text-[2.2rem]">Subtracting from your list of priorities is as important as adding to it.</h1>
         <div className="flex gap-10 md:grid md:place-content-center">
@@ -165,7 +165,7 @@ export const LandingPageComponent: React.FC = () => {
           <MdOutlineCreate /> &nbsp; Start Now
           </button>
           <button  
-            className="w-[30%] lg:w-[100%] lg:px-20 shadow-lg flex md:w-full items-center justify-center text-primary-color border-primary-color outline outline-1 rounded-md py-[10px] px-[20px]"
+            className="w-[30%] lg:w-[100%] lg:px-20 shadow-lg flex items-center justify-center text-primary-color border-primary-color outline outline-1 rounded-md py-[10px] px-[20px]"
             onClick={ShowSignUp}
           >
           <AiOutlineLogin /> &nbsp; Sign Up
