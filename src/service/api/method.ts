@@ -44,17 +44,17 @@ export const POST = async (
 ): Promise<ApiResponse.API> => {
     if (token !== null) {
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
-        // axios.defaults.timeout = 10000
-
     }
     let apiResponse = new ApiResponse.API();
     apiResponse = await axios
         .post(url, request)
-        .then(function (response) {
+        .then((response) => {
             apiResponse = response.data;
-            if (apiResponse.responseCode === "0" || apiResponse.responseCode === "00") {
+            if (response.status === 200) {
                 apiResponse.success = true;
-            } else {
+                apiResponse.data = response.data
+            }            
+            else {
                 apiResponse.success = false;
             }
             return apiResponse;
