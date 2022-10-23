@@ -27,7 +27,7 @@ export class TodoThunkService {
           },
         },
       });
-      Notify(response.responseMessage as string, true);
+      Notify("Successful", true);
     } else {
       store.dispatch({
         type: LandingPage.SET_LANDING_PAGE_STATE,
