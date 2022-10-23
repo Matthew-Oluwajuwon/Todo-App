@@ -159,7 +159,7 @@ export const LandingPageComponent: React.FC = () => {
         <div className="flex gap-10 md:grid md:place-content-center">
 
         <button  
-            className="bg-logo-color shadow-lg lg:w-[100%] text-primary-white w-[30%] flex items-center justify-center hover:text-primary-color hover:border-primary-color hover:bg-primary-white hover:outline hover:outline-1 rounded-md py-[10px] px-[20px]"
+            className="bg-primary-color shadow-lg lg:w-[100%] text-primary-white w-[30%] flex items-center justify-center hover:text-primary-color hover:border-primary-color hover:bg-primary-white hover:outline hover:outline-1 rounded-md py-[10px] px-[20px]"
             onClick={ShowLogin}
           >
           <MdOutlineCreate /> &nbsp; Start Now
