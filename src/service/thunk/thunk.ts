@@ -5,6 +5,7 @@ import { AuthController } from "../api/auth-controller";
 import { POST } from "../api/method";
 import { store } from "../store";
 import { ApiResponse } from "../../models/clients/api-response";
+import { ApiRequest } from "../../models/clients/api-request";
 
 export class TodoThunkService {
   static SignUpUser = async (state: State.LandingPage) => {
@@ -24,6 +25,7 @@ export class TodoThunkService {
             showSignUp: false,
             processing: false,
             response: user,
+            request: new ApiRequest.SignUp()
           },
         },
       });
