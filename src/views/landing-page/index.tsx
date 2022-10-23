@@ -51,7 +51,7 @@ export const LandingPageComponent: React.FC = () => {
       <header className="flex w-screen h-[70px] shadow-md bg-primary-color justify-around lg:pr-10 lg:pl-10 lg:justify-between items-center">
         <Link
           to={"/"}
-          className="flex w-[fit-content] h-full items-center justify-center text-primary-white font-[logo-font] font-extrabold text-3xl text-shadow-md"
+          className="flex w-[fit-content] h-full items-center justify-center text-primary-white font-[logo-font] font-extrabold text-3xl lg:text-xl text-shadow-md"
         >
           <img src={Logo} alt="logo" width={50} height={50} /> Todo App
         </Link>
