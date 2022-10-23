@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { LandingPage } from './views/landing-page'
+import { LandingPageComponent } from './views/landing-page'
 
 export const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<LandingPage />} />
+        <Route path='/' element={<LandingPageComponent />} />
       </Routes>
     </BrowserRouter>
   )
