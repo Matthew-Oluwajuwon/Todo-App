@@ -4,5 +4,5 @@ import { combineReducers } from "redux";
 
 export const Reducers = combineReducers({
     utilityConfigState: UtilityStateReducer.GetConfig,
-    landingPageState: TodoStateReducer.GetLandingPage
+    landingPageState: TodoStateReducer.GetLandingPage,
 })

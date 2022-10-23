@@ -12,8 +12,18 @@
     src: url("./fonts/aApplicantSignature.ttf");
 }
 
+:root {
+    --primary-color: #1e293b;
+}
+
 html, body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+.ant-btn-primary {
+    width: 100%!important;
+    background-color: var(--primary-color)!important;
+    border-color: var(--primary-color)!important;
 }

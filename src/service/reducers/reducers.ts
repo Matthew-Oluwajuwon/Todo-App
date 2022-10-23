@@ -5,6 +5,8 @@ export class TodoStateReducer {
     switch (action.type) {
       case LandingPage.SET_LANDING_PAGE_STATE:
         return action.payload;
+        case LandingPage.SET_LOGIN_PAGE_STATE:
+            return action.payload
       default:
         return state;
     }

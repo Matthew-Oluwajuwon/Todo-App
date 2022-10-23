@@ -7,5 +7,10 @@ export namespace State {
 
   export interface LandingPage {
     showMobileMenu: boolean;
+    Login: Login;
+  }
+
+  export interface Login {
+    showLogin: boolean;
   }
 }
