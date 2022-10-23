@@ -96,7 +96,7 @@ export const LandingPageComponent: React.FC = () => {
         <ul
           className={`text-primary-white flex gap-10 lg:${
             state.showMobileMenu ? "block" : "hidden"
-          } font-extralight lg:font-normal lg:grid lg:w-[60%] lg:bg-primary-color lg:h-screen lg:justify-center lg:place-content-start lg:py-[10rem] lg:text-xl lg:absolute lg:right-0 lg:top-0`}
+          } font-extralight lg:font-normal lg:grid lg:w-[60%] lg:bg-primary-color lg:h-screen lg:justify-center lg:place-content-start lg:py-[10rem] lg:text-md lg:absolute lg:right-0 lg:top-0`}
         >
           <div
             className="text-3xl hidden lg:block absolute top-10 right-10"
