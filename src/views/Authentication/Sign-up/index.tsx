@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { State } from "../../../models/application/state";
 import { LandingPage } from "../../../service/actions/actions";
 
-export const Login: React.FC = () => {
+export const SignUp: React.FC = () => {
   const dispatch = useDispatch();
   const { landingPageState }: any = useSelector((state) => state);
   const state: State.LandingPage = landingPageState;
@@ -15,27 +15,27 @@ export const Login: React.FC = () => {
       type: LandingPage.SET_LANDING_PAGE_STATE,
       payload: {
         ...state,
-        Login: {
-          ...state.Login,
-          showLogin: false,
+        SignUp: {
+          ...state.SignUp,
+          showSignUp: false,
         },
       },
     });
   }, [state]);
 
-  const ShowSignUp = useCallback(() => {
+  const ShowLogin = useCallback(() => {
     dispatch({
-      type: LandingPage.SET_SIGN_UP_PAGE_STATE,
+      type: LandingPage.SET_LOGIN_PAGE_STATE,
       payload: {
         ...state,
         showMobileMenu: false,
         SignUp: {
           ...state.SignUp,
-          showSignUp: true,
+          showSignUp: false,
         },
         Login: {
           ...state.Login,
-          showLogin: false,
+          showLogin: true,
         },
       },
     });
@@ -43,9 +43,9 @@ export const Login: React.FC = () => {
 
   return (
     <Modal
-      title={<div className="text-center">Login</div>}
+      title={<div className="text-center">Sign Up</div>}
       centered
-      open={state.Login?.showLogin}
+      open={state.SignUp?.showSignUp}
       onCancel={HandleCancel}
       footer={null}
       className="rounded-lg"
@@ -60,9 +60,17 @@ export const Login: React.FC = () => {
         autoComplete="on"
       >
         <Form.Item
+          label="Full Name"
+          name="name"
+          rules={[{ required: true, message: "Please input your full name!" }]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
           label="Email"
           name="email"
-          rules={[{ required: true, message: "Please input your username!" }]}
+          rules={[{ required: true, message: "Please input your email!" }]}
         >
           <Input />
         </Form.Item>
@@ -77,17 +85,17 @@ export const Login: React.FC = () => {
 
         <Form.Item wrapperCol={{ span: 24 }}>
           <Button type="primary" htmlType="submit">
-            Login
+            Sign Up
           </Button>
         </Form.Item>
       </Form>
       <div className="text-center flex items-center justify-center">
-        Don't have an account?&nbsp;
+        Already have an account?&nbsp;
         <span
-          onClick={ShowSignUp}
+          onClick={ShowLogin}
           className="text-primary-color font-bold cursor-pointer"
         >
-          Sign Up
+          Login
         </span>
       </div>
     </Modal>

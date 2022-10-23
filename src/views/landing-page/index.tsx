@@ -9,12 +9,16 @@ import {
   AiOutlinePhone,
   AiOutlineQuestionCircle,
   AiOutlineClose,
+  AiOutlineLogin
 } from "react-icons/ai";
+import { MdOutlineCreate } from "react-icons/md"
 import { useSelector } from "react-redux";
 import { State } from "../../models/application/state";
 import { useDispatch } from "react-redux";
 import { LandingPage } from "../../service/actions/actions";
 import { Login } from "../Authentication/Login";
+import { SignUp } from "../Authentication/Sign-up";
+import Notepad from "../../assets/notepad.gif"
 
 export const LandingPageComponent: React.FC = () => {
   const dispatch = useDispatch();
@@ -56,11 +60,29 @@ export const LandingPageComponent: React.FC = () => {
     },
     [state],
   )
+
+  const ShowSignUp = useCallback(
+    () => {
+      dispatch({
+        type: LandingPage.SET_SIGN_UP_PAGE_STATE,
+        payload: {
+            ...state,
+            showMobileMenu: false,
+            SignUp: {
+                ...state.SignUp,
+                showSignUp: true
+            }
+        }
+      })
+    },
+    [state],
+  )
   
 
   return (
     <div>
         <Login />
+        <SignUp />
       <header className="flex w-screen h-[70px] shadow-md bg-primary-color justify-around lg:pr-10 lg:pl-10 lg:justify-between items-center">
         <Link
           to={"/"}
@@ -113,26 +135,47 @@ export const LandingPageComponent: React.FC = () => {
           <div className="text-primary-white gap-5 lg:grid hidden">
             <button
               
-              className="bg-logo-color hover:bg-primary-color hover:outline hover:outline-1 rounded-md py-[10px] px-[50px]"
+              className="bg-logo-color flex items-center justify-center hover:bg-primary-color hover:outline hover:outline-1 rounded-md py-[10px] px-[50px]"
               onClick={ShowLogin}
             >
-              Login
+              <AiOutlineLogin />&nbsp;Login
             </button>
-            <button >Sign Up</button>
+            <button className="flex items-center justify-center" onClick={ShowSignUp}><MdOutlineCreate /> &nbsp;Sign Up</button>
           </div>
         </ul>
         <div className="text-primary-white gap-5 flex lg:hidden">
-          <button
-            
-            className="bg-logo-color hover:bg-primary-color hover:outline hover:outline-1 rounded-md py-[10px] px-[20px]"
+          <button  
+            className="bg-logo-color flex items-center justify-center hover:bg-primary-color hover:outline hover:outline-1 rounded-md py-[10px] px-[20px]"
             onClick={ShowLogin}
           >
-            Login
+           <AiOutlineLogin />&nbsp; Login
           </button>
-          <button >Sign Up</button>
+          <button className="flex items-center justify-center" onClick={ShowSignUp}> <MdOutlineCreate /> &nbsp;Sign Up</button>
         </div>
       </header>
-      <section></section>
+      <section className="grid md:block grid-cols-2 py-20 px-20">
+        <div>
+        <h1 className="text-[3.5rem] md:text-center md:mb-20 font-black lg:text-[2.2rem]">Subtracting from your list of priorities is as important as adding to it.</h1>
+        <div className="flex gap-10 md:grid md:place-content-center">
+
+        <button  
+            className="bg-logo-color shadow-lg lg:w-[100%] text-primary-white w-[30%] flex items-center justify-center hover:text-primary-color hover:border-primary-color hover:bg-primary-white hover:outline hover:outline-1 rounded-md py-[10px] px-[20px]"
+            onClick={ShowLogin}
+          >
+          <MdOutlineCreate /> &nbsp; Start Now
+          </button>
+          <button  
+            className="w-[30%] lg:w-[100%] lg:px-20 shadow-lg flex md:w-full items-center justify-center text-primary-color border-primary-color outline outline-1 rounded-md py-[10px] px-[20px]"
+            onClick={ShowSignUp}
+          >
+          <AiOutlineLogin /> &nbsp; Sign Up
+          </button>
+        </div>
+        </div>
+        <div className="md:hidden">
+        <img src={Notepad} alt="notepad" className="mt-[-70px]" />
+        </div>
+      </section>
     </div>
   );
 };
