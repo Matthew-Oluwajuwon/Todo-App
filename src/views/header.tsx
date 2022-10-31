@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -17,7 +17,6 @@ export const Header = () => {
   const { landingPageState }: any = useSelector((state) => state);
   const [todo, setTodo] = useState<string>("");
   const [todos, setTodos] = useState<ApiResponse.Todos[]>([]);
-  const [data, setData] = useState<[]>([])
   const state: State.LandingPage = landingPageState;
   const ShowMobileMenu = useCallback(() => {
     dispatch({
@@ -50,20 +49,13 @@ export const Header = () => {
     if (todo) {
       setTodos([...todos, { id: Date.now(), todo: todo, author: "Matthew Oluwajuwon", time: getTime }])
       setTodo('')
-      sessionStorage.setItem("Todos", JSON.stringify(todos))
     }
   }
   
   const onDelete = (id: number) => {
     setTodos(todos.filter(todo => todo.id !== id))
     
-  }
-
-  useEffect(() => {
-    
-    setData(JSON.parse(sessionStorage.getItem("Todos") as any))
-  }, [])
-  
+  }  
 
   const columns = [
     {
@@ -183,7 +175,7 @@ export const Header = () => {
           <Table
             bordered
             columns={columns as any}
-            dataSource={data as any}
+            dataSource={todos as any}
             className="w-full"
           />
         </section>
