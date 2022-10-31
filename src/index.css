@@ -22,8 +22,19 @@ html, body {
     margin: 0;
 }
 
-.ant-btn-primary {
-    width: 100%!important;
-    background-color: var(--primary-color)!important;
-    border-color: var(--primary-color)!important;
-}
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar:hover {
+    width: 10px;
+  }

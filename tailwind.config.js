@@ -14,7 +14,10 @@ module.exports = {
     colors: {
       'logo-color': '#4272da',
       'primary-color': '#1e293b',
-      'primary-white': '#ffffff'
+      'primary-white': '#ffffff',
+      'primary-red': 'red',
+      'primary-grey': '#ddd',
+      'primary-green': 'green'
     },
     fontFamily: {
       'logo-font': ['Logo-font'],
@@ -35,6 +38,7 @@ module.exports = {
 
       '2xl': {'max':'1536px'},
       // => @media (min-width: 1536px) { ... }
+      '3xl': '1536px'
     }
   },
   plugins: [

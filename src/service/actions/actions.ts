@@ -4,7 +4,6 @@ export class UtilityConfig {
 
 export class LandingPage {
   static SET_LANDING_PAGE_STATE = "SET_LANDING_PAGE_STATE";
-  static SET_LOGIN_PAGE_STATE = "SET_LOGIN_PAGE_STATE";
-  static SET_SIGN_UP_PAGE_STATE = "SET_SIGN_UP_PAGE_STATE";
-  static CREATE_USER = "CREATE_USER";
+  static CREATE_TODO = "CREATE_TODO"
+  static GET_TODOS = "GET_TODOS"
 }
